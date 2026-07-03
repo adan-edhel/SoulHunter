@@ -40,6 +40,8 @@ public class LoadingScreen : MonoBehaviour
     /// <param name="sceneIndex"></param>
     public void UpdateAnimatorValues(bool isLoading, int sceneIndex)
     {
+        if (!transitionAnimator) return;
+
         transitionAnimator?.SetBool("isLoading", isLoading);
 
         if (sceneIndex < 0)
