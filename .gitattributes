@@ -1,0 +1,22 @@
+# Unity specific
+*.meta text eol=lf
+*.unity text eol=lf
+*.asset text eol=lf
+*.prefab text eol=lf
+*.mat text eol=lf
+*.anim text eol=lf
+*.controller text eol=lf
+*.cs text eol=lf
+
+# Force binary files to be treated as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.dds binary
+*.fbx binary
+*.blend binary
+*.psd binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
