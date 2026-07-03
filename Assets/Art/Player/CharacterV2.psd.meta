@@ -180,7 +180,7 @@ TextureImporter:
       213: -2681273008727802882
     second: Throw_4
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -200,6 +200,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -208,9 +210,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -231,9 +233,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1019,6 +1026,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Attack_0: 2962414819756948048
+      Attack_1: 5149069995878886641
+      Attack_2: -6179092651603830040
+      Attack_3: 7736293728355150398
+      Attack_4: 2485176314488700165
+      Idle_0: 4224387637987799335
+      Idle_1: -5894922688698100129
+      Idle_2: -8622065649536757406
+      Idle_3: -7504037639505345983
+      Idle_4: 1856398913245025635
+      Idle_5: 8038494490106392540
+      Idle_6: -218585820650238142
+      Idle_7: -4952376231149567463
+      Jump_0: 8267104035559308824
+      Jump_1: 4091985231406821056
+      Jump_2: 4330119462408020656
+      Jump_3: 165365159088307742
+      Jump_4: -359396184961456870
+      Jump_5: 8941041684258097004
+      Jump_6: 4640781866616972725
+      Jump_7: 7785103909185519564
+      Slash: 1343604932917172391
+      Throw_0: 3542488584507149975
+      Throw_1: 7669116675563594786
+      Throw_2: -29125143022322726
+      Throw_3: -5473233443991930226
+      Throw_4: -2681273008727802882
+      Walk_0: 3455813941074746506
+      Walk_1: 1820255899335137852
+      Walk_2: 7810342310667229550
+      Walk_3: 2640762884694317976
+      Walk_4: -281486171835532560
+      Walk_5: -9111302624452055426
+      Walk_6: 5711472315568613018
+      Walk_7: 1335152240088196758
   spritePackingTag: 
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1

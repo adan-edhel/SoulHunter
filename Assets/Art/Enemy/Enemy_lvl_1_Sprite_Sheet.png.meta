@@ -153,7 +153,7 @@ TextureImporter:
       213: 5719451247354464183
     second: Enemy_lvl_1_Sprite_Sheet_49
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -173,6 +173,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -181,9 +183,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -204,9 +206,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -761,6 +768,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Bite_0: -2167222823894383731
+      Bite_1: 9047350029047274346
+      Bite_2: 1171245734050184819
+      Bite_3: 5892871396569400484
+      Bite_4: 5192118687488297210
+      Bite_5: -8799794925245487295
+      Death_0: -3093881759050316355
+      Death_1: -7185090802383429230
+      Death_2: 1462107590838684232
+      Death_3: -5546901781979433397
+      Hurt_0: -4537293111667707223
+      Hurt_1: 6863311395153417186
+      Idle_0: 6003725700113703971
+      Idle_1: 4228882352508653580
+      Idle_2: -4860589468317786074
+      Idle_3: -137482213752968667
+      Idle_4: 7616429344006424661
+      Walk_0: -6361557917584352668
+      Walk_1: 3471815456251639956
+      Walk_2: -3483021914711575598
+      Walk_3: 7747447322318286857
+      Walk_4: -1019306076503314743
+      Walk_5: 164060456689065125
+      Walk_6: 1249270652111689900
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

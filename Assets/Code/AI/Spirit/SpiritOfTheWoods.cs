@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class SpiritOfTheWoods : MonoBehaviour // Mort
 {
@@ -36,7 +36,7 @@ public class SpiritOfTheWoods : MonoBehaviour // Mort
                 particle.Play();
             }
 
-            GetComponentInChildren<Light2D>().enabled = true;
+            GetComponentInChildren<UnityEngine.Rendering.Universal.Light2D>().enabled = true;
         }
         else
         {
@@ -45,7 +45,7 @@ public class SpiritOfTheWoods : MonoBehaviour // Mort
                 particle.Stop();
             }
 
-            GetComponentInChildren<Light2D>().enabled = false;
+            GetComponentInChildren<UnityEngine.Rendering.Universal.Light2D>().enabled = false;
         }
     }
 }

@@ -156,7 +156,7 @@ TextureImporter:
       213: 21300100
     second: Grass, Ground, Plants_50
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -176,6 +176,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -184,9 +186,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 16
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -207,12 +209,41 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1307,6 +1338,58 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Grass, Ground, Plants_0: 21300000
+      Grass, Ground, Plants_1: 21300002
+      Grass, Ground, Plants_10: 21300020
+      Grass, Ground, Plants_11: 21300022
+      Grass, Ground, Plants_12: 21300024
+      Grass, Ground, Plants_13: 21300026
+      Grass, Ground, Plants_14: 21300028
+      Grass, Ground, Plants_15: 21300030
+      Grass, Ground, Plants_16: 21300032
+      Grass, Ground, Plants_17: 21300034
+      Grass, Ground, Plants_18: 21300036
+      Grass, Ground, Plants_19: 21300038
+      Grass, Ground, Plants_2: 21300004
+      Grass, Ground, Plants_20: 21300040
+      Grass, Ground, Plants_21: 21300042
+      Grass, Ground, Plants_22: 21300044
+      Grass, Ground, Plants_23: 21300046
+      Grass, Ground, Plants_24: 21300048
+      Grass, Ground, Plants_25: 21300050
+      Grass, Ground, Plants_26: 21300052
+      Grass, Ground, Plants_27: 21300054
+      Grass, Ground, Plants_28: 21300056
+      Grass, Ground, Plants_29: 21300058
+      Grass, Ground, Plants_3: 21300006
+      Grass, Ground, Plants_30: 21300060
+      Grass, Ground, Plants_31: 21300062
+      Grass, Ground, Plants_32: 21300064
+      Grass, Ground, Plants_33: 21300066
+      Grass, Ground, Plants_34: 21300068
+      Grass, Ground, Plants_35: 21300070
+      Grass, Ground, Plants_36: 21300072
+      Grass, Ground, Plants_37: 21300074
+      Grass, Ground, Plants_38: 21300076
+      Grass, Ground, Plants_39: 21300078
+      Grass, Ground, Plants_4: 21300008
+      Grass, Ground, Plants_40: 21300080
+      Grass, Ground, Plants_41: 21300082
+      Grass, Ground, Plants_42: 21300084
+      Grass, Ground, Plants_43: 21300086
+      Grass, Ground, Plants_44: 21300088
+      Grass, Ground, Plants_45: 21300090
+      Grass, Ground, Plants_46: 21300092
+      Grass, Ground, Plants_47: 21300094
+      Grass, Ground, Plants_48: 21300096
+      Grass, Ground, Plants_49: 21300098
+      Grass, Ground, Plants_5: 21300010
+      Grass, Ground, Plants_50: 21300100
+      Grass, Ground, Plants_6: 21300012
+      Grass, Ground, Plants_7: 21300014
+      Grass, Ground, Plants_8: 21300016
+      Grass, Ground, Plants_9: 21300018
   spritePackingTag: 
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
