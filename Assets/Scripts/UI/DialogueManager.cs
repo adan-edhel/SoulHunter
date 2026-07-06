@@ -4,10 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-using SoulHunter.Player;
 using UnityEngine.EventSystems;
 
-namespace SoulHunter.Dialogue
+namespace SoulHunter
 {
     public class DialogueManager : MonoBehaviour // Mort
     {

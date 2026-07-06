@@ -1,18 +1,18 @@
-﻿using SoulHunter.Base;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SpiritDeactivator : MonoBehaviour
+namespace SoulHunter
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class SpiritDeactivator : MonoBehaviour
     {
-        if (DataManager.Instance.soulsCollected < 14) return;
-
-        // If collision is on the player layer
-        if (collision.transform.gameObject.layer == 10)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            SpiritOfTheWoods.instance.HandleSpiritActivation(false);
+            if (DataManager.Instance.soulsCollected < 14) return;
+
+            // If collision is on the player layer
+            if (collision.transform.gameObject.layer == 10)
+            {
+                SpiritOfTheWoods.instance.HandleSpiritActivation(false);
+            }
         }
     }
 }

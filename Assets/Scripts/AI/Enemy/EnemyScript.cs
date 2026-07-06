@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-using SoulHunter.Gameplay;
-
-namespace SoulHunter.Enemy
+namespace SoulHunter
 {
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class EnemyScript : MonoBehaviour

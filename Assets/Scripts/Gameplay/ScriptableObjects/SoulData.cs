@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SoulHunter;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Soul", menuName = "Soul Hunter/Soul")]

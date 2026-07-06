@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-using SoulHunter.Enemy;
-
-namespace SoulHunter.Player
+namespace SoulHunter
 {
     public class PlayerCombat : MonoBehaviour
     {

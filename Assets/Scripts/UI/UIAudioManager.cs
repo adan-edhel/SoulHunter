@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoulHunter.UI
+namespace SoulHunter
 {
     public class UIAudioManager : MonoBehaviour // Mort - simple script for UI audio
     {

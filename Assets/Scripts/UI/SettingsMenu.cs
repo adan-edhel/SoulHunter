@@ -2,7 +2,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace SoulHunter.UI
+namespace SoulHunter
 {
     public class SettingsMenu : MonoBehaviour // Mort
     {

@@ -3,9 +3,9 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace SoulHunter.Player
+namespace SoulHunter
 {
-    public class PlayerMovement : MonoBehaviour, Input.IMoveInput // Mort
+    public class PlayerMovement : MonoBehaviour, IMoveInput // Mort
     {
         [Header("Movement Attributes")]
         public float moveSpeed = 3f;

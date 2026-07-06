@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoulHunter.Gameplay
+namespace SoulHunter
 {
     public class Damageable : MonoBehaviour // Mort & Thomas
     {

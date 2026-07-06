@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using SoulHunter.Gameplay;
 
-namespace SoulHunter.Enemy
+namespace SoulHunter
 {
     public class EnemyBase : Damageable
     {

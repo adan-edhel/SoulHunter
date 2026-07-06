@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using SoulHunter.Player;
 
-namespace SoulHunter.Dialogue
+namespace SoulHunter
 {
     public class DialogueTrigger : Interactable // Mort
     {

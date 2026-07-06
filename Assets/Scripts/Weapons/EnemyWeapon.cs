@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using SoulHunter.Gameplay;
-using SoulHunter.Player;
+﻿using UnityEngine;
 
-namespace SoulHunter.Weapons 
+namespace SoulHunter 
 {
     public class EnemyWeapon : MonoBehaviour
     {

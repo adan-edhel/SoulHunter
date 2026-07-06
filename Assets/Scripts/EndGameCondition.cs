@@ -1,5 +1,4 @@
-﻿using SoulHunter.Dialogue;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EndGameCondition : MonoBehaviour
 {

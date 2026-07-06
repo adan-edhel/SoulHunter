@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoulHunter.Input
+namespace SoulHunter
 {
     public interface IAimInput // Mort
     {

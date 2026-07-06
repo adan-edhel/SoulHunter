@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-using SoulHunter.Enemy;
-using SoulHunter.Base;
-
 namespace SoulHunter
 {
     public class GameManager : MonoBehaviour // Mort

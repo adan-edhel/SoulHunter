@@ -1,9 +1,9 @@
 ﻿using UnityEngine.InputSystem;
 using UnityEngine;
 
-namespace SoulHunter.Player
+namespace SoulHunter
 {
-    public class PlayerAim : MonoBehaviour, Input.IAimInput // Mort
+    public class PlayerAim : MonoBehaviour, IAimInput // Mort
     {
         [Header("Aim Variables")]
         public Vector2 aimDirection;

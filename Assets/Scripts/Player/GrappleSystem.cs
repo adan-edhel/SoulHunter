@@ -3,9 +3,9 @@ using System.Linq;
 using UnityEngine;
 
 // Followed tutorial by Sean Duffy, who wrote a majority of the code
-namespace SoulHunter.Player
+namespace SoulHunter
 {
-    public class GrappleSystem : MonoBehaviour, Input.IMoveInput // (Adjusted by) Mort
+    public class GrappleSystem : MonoBehaviour, IMoveInput // (Adjusted by) Mort
     {
         public bool isColliding;
 

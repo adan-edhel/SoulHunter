@@ -1,68 +1,70 @@
-﻿using SoulHunter.Enemy;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyAnimation : MonoBehaviour // Mort
+namespace SoulHunter
 {
-    EnemyBase enemyBase;
-    EnemyCombat enemyCombat;
-    EnemyScript movement;
-
-    SpriteRenderer spriteRenderer;
-
-    Animator anim;
-
-    private void Awake()
+    public class EnemyAnimation : MonoBehaviour // Mort
     {
-        enemyBase = GetComponentInParent<EnemyBase>();
-        enemyCombat = GetComponentInParent<EnemyCombat>();
-        movement = GetComponentInParent<EnemyScript>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
-    }
+        EnemyBase enemyBase;
+        EnemyCombat enemyCombat;
+        EnemyScript movement;
 
-    private void LateUpdate()
-    {
-        UpdateValues();
-        FlipTexture();
-    }
+        SpriteRenderer spriteRenderer;
 
-    /// <summary>
-    /// Updates animator values
-    /// </summary>
-    void UpdateValues()
-    {
-        // Syncs animator booleans with static booleans
-        anim.SetBool("isAttacking", enemyCombat.attacking);
-        anim.SetBool("isDead", enemyBase.isDead);
-        anim.SetBool("isHurt", false);
+        Animator anim;
 
-        // Syncs animator speed with enemy speed
-        anim.SetFloat("Speed", Mathf.Abs(movement.currentSpeed));
-    }
-
-    /// <summary>
-    /// Flips enemy sprite according to its movement direction
-    /// </summary>
-    void FlipTexture()
-    {
-        if (movement.Moving)
+        private void Awake()
         {
-            if (movement.MoveRight)
+            enemyBase = GetComponentInParent<EnemyBase>();
+            enemyCombat = GetComponentInParent<EnemyCombat>();
+            movement = GetComponentInParent<EnemyScript>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            anim = GetComponent<Animator>();
+        }
+
+        private void LateUpdate()
+        {
+            UpdateValues();
+            FlipTexture();
+        }
+
+        /// <summary>
+        /// Updates animator values
+        /// </summary>
+        void UpdateValues()
+        {
+            // Syncs animator booleans with static booleans
+            anim.SetBool("isAttacking", enemyCombat.attacking);
+            anim.SetBool("isDead", enemyBase.isDead);
+            anim.SetBool("isHurt", false);
+
+            // Syncs animator speed with enemy speed
+            anim.SetFloat("Speed", Mathf.Abs(movement.currentSpeed));
+        }
+
+        /// <summary>
+        /// Flips enemy sprite according to its movement direction
+        /// </summary>
+        void FlipTexture()
+        {
+            if (movement.Moving)
             {
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                spriteRenderer.flipX = true;
+                if (movement.MoveRight)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else
+                {
+                    spriteRenderer.flipX = true;
+                }
             }
         }
-    }
 
-    /// <summary>
-    /// Plays hurt animation once
-    /// </summary>
-    public void HurtAnimation()
-    {
-        anim.SetBool("isHurt", true);
+        /// <summary>
+        /// Plays hurt animation once
+        /// </summary>
+        public void HurtAnimation()
+        {
+            anim.SetBool("isHurt", true);
+        }
     }
 }

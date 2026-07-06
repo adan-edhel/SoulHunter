@@ -1,6 +1,5 @@
 ﻿using Cinemachine;
 using SoulHunter;
-using SoulHunter.Dialogue;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour // Mort

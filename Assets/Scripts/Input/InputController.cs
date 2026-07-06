@@ -1,9 +1,7 @@
 ﻿using UnityEngine.InputSystem;
 using UnityEngine;
 
-using SoulHunter.Player;
-
-namespace SoulHunter.Input
+namespace SoulHunter
 {
     public class InputController : MonoBehaviour // Mort
     {

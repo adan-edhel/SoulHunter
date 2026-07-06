@@ -1,13 +1,9 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 
-using SoulHunter.Input;
-using SoulHunter.Player;
-using SoulHunter.Dialogue;
-
-namespace SoulHunter.UI
+namespace SoulHunter
 {
-    public class PauseMenu : MonoBehaviour, Input.ITogglePause // Mort
+    public class PauseMenu : MonoBehaviour, ITogglePause // Mort
     {
         public GameObject PauseMenuUI;
         [SerializeField] Button continueButton;

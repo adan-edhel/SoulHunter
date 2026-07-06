@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoulHunter.UI
+namespace SoulHunter
 {
     public class CanvasHandler : MonoBehaviour // Mort - Allows the UI to be accessed with a singleton
     {

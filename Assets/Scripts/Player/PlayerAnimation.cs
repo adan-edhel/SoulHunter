@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SoulHunter.Player
+namespace SoulHunter
 {
     public class PlayerAnimation : MonoBehaviour
     {

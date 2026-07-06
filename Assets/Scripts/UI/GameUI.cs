@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using SoulHunter.Player;
 
-namespace SoulHunter.UI
+namespace SoulHunter
 {
     public class GameUI : MonoBehaviour
     {

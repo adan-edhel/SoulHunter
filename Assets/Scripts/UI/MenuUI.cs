@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoulHunter.UI
+namespace SoulHunter
 {
     public class MenuUI : MonoBehaviour // Mort
     {

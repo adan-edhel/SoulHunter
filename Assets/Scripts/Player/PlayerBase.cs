@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 
-using SoulHunter.UI;
-using SoulHunter.Gameplay;
-
-namespace SoulHunter.Player
+namespace SoulHunter
 {
     public class PlayerBase : Damageable // Mort
     {

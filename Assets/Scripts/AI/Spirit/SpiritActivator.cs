@@ -1,35 +1,35 @@
-﻿using SoulHunter;
-using SoulHunter.Dialogue;
-using SoulHunter.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SpiritActivator : MonoBehaviour
+namespace SoulHunter
 {
-    DialogueTrigger dialogue;
-
-    void Start()
+    public class SpiritActivator : MonoBehaviour
     {
-        dialogue = GetComponent<DialogueTrigger>();
-    }
+        DialogueTrigger dialogue;
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        // If dialogue is already initiated, return.
-        if (DialogueManager.inDialogue) return;
-
-        // If collision is on the player layer
-        if (collision.transform.gameObject.layer == 10)
+        void Start()
         {
-            // If player isn't interacting and dialogue can't be triggered by collision, return.
-            if (!GameManager.interacting && !dialogue.canTriggerByCollision) return;
+            dialogue = GetComponent<DialogueTrigger>();
+        }
 
-            // If player is swinging, return.
-            if (PlayerBase.isSwinging) return;
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            // If dialogue is already initiated, return.
+            if (DialogueManager.inDialogue) return;
 
-            // If either activatable or repeatable, start dialogue.
-            if (dialogue.isActivatable || dialogue.isRepeatable)
+            // If collision is on the player layer
+            if (collision.transform.gameObject.layer == 10)
             {
-                SpiritOfTheWoods.instance.HandleSpiritActivation(true);
+                // If player isn't interacting and dialogue can't be triggered by collision, return.
+                if (!GameManager.interacting && !dialogue.canTriggerByCollision) return;
+
+                // If player is swinging, return.
+                if (PlayerBase.isSwinging) return;
+
+                // If either activatable or repeatable, start dialogue.
+                if (dialogue.isActivatable || dialogue.isRepeatable)
+                {
+                    SpiritOfTheWoods.instance.HandleSpiritActivation(true);
+                }
             }
         }
     }
