@@ -566,10 +566,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e443c8b17b26b4ea1531d6f645c32b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  jumpSpeed: 8
+  moveSpeed: 7
+  jumpSpeed: 10
   swingForce: 4
   yankForce: 7
+  groundAcceleration: 45
+  airAcceleration: 18
   impactDustParticle: {fileID: 165672, guid: 24d496517ac8ec042893ce29ccd2952b, type: 3}
   groundCheckLayer:
     serializedVersion: 2
@@ -598,7 +600,7 @@ MonoBehaviour:
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 12288
-  maxRopeLength: 10
+  maxRopeLength: 12
   climbSpeed: 3
 --- !u!58 &9190005277524162411
 CircleCollider2D:
@@ -749,7 +751,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: fece25449d2b14a4ca02fca3fd603ea2, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0

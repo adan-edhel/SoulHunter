@@ -8,10 +8,14 @@ namespace SoulHunter
     public class PlayerMovement : MonoBehaviour, IMoveInput // Mort
     {
         [Header("Movement Attributes")]
-        public float moveSpeed = 3f;
+        public float moveSpeed = 7f;
         public float jumpSpeed = 8f;
         public float swingForce = 4f;
         public float yankForce = 7f;
+
+        [SerializeField] float groundAcceleration = 45.0f;
+        [SerializeField] float airAcceleration = 18.0f;
+
 
         // Max Slope Climb Angle
         float maxClimbAngle = 50;
@@ -60,96 +64,67 @@ namespace SoulHunter
         /// <summary>
         /// Handles player movement and jumping using input interfaces
         /// </summary>
-        public void HandleMovement()
+        private void HandleMovement()
         {
-            if (PlayerBase.isPaused)
+            if (PlayerBase.isPaused) return;
+
+            float acceleration = PlayerBase.isGrounded ? groundAcceleration : airAcceleration;
+
+            // HORIZONTAL MOVEMENT
+            if (!PlayerBase.isSwinging)
             {
-                return;
+                float targetSpeed = i_moveInput.x * moveSpeed;
+                float newXVelocity = Mathf.MoveTowards(rigidBody.velocity.x, targetSpeed, acceleration * Time.fixedDeltaTime);
+
+                // Slope handling
+                if (PlayerBase.isGrounded)
+                {
+                    RaycastHit2D slopeHit = Physics2D.Raycast(transform.position, Vector2.down, 1.3f, groundCheckLayer);
+                    if (slopeHit)
+                    {
+                        float slopeAngle = Vector2.Angle(slopeHit.normal, Vector2.up);
+                        if (slopeAngle <= maxClimbAngle && slopeAngle > 0.1f)
+                        {
+                            newXVelocity = targetSpeed * Mathf.Cos(slopeAngle * Mathf.Deg2Rad);
+                        }
+                    }
+                }
+
+                rigidBody.velocity = new Vector2(newXVelocity, rigidBody.velocity.y);
+            }
+            else
+            { // Swinging
+                var playerToHookDirection = (PlayerBase.ropeHook - (Vector2)transform.position).normalized;
+                Vector2 perpendicularDirection = i_moveInput.x < 0
+                    ? new Vector2(-playerToHookDirection.y, playerToHookDirection.x)
+                    : new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
+
+                rigidBody.AddForce(perpendicularDirection * swingForce, ForceMode2D.Force);
+
+                if (Mathf.Abs(rigidBody.velocity.x) > 4f)
+                    AudioManager.PlaySound(AudioManager.Sound.ClothFlowing, transform.position);
             }
 
-            if (i_moveInput.x * Math.Sign(i_moveInput.x) > 0.01f)
+            // JUMPING
+            if (PlayerBase.isJumping)
             {
-                if (PlayerBase.isSwinging)
+                if (!PlayerBase.isSwinging)
                 {
-                    var playerToHookDirection = (PlayerBase.ropeHook - (Vector2)transform.position).normalized;
-
-                    Vector2 perpendicularDirection;
-                    if (i_moveInput.x < 0)
+                    if (PlayerBase.isGrounded)
                     {
-                        perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
-                        var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
-                        Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
-                    }
-                    else
-                    {
-                        perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
-                        var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
-                        Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
-                    }
-
-                    var force = perpendicularDirection * swingForce;
-                    rigidBody.AddForce(force, ForceMode2D.Force);
-
-                    if (rigidBody.velocity.x * Math.Sign(rigidBody.velocity.x) > 4)
-                    {
-                        AudioManager.PlaySound(AudioManager.Sound.ClothFlowing, transform.position);
+                        rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
+                        AudioManager.PlaySound(AudioManager.Sound.PlayerJump, transform.position);
+                        PlayerBase.isJumping = false;
                     }
                 }
                 else
                 {
-                    if (PlayerBase.isGrounded)
-                    {
-                        var groundForce = moveSpeed * 2f;
-                        rigidBody.AddForce(new Vector2((i_moveInput.x * groundForce - rigidBody.velocity.x) * groundForce, 0));
-                        rigidBody.velocity = new Vector2(velocity.x, velocity.y);
-                        velocity.y = 0;
-
-                        RaycastHit2D slopeHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - .7f), Vector2.right * math.sign(velocity.x), 1.5f, groundCheckLayer);
-                        if (slopeHit)
-                        {
-                            float slopeAngle = Vector2.Angle(slopeHit.normal, Vector2.up);
-
-                            if (slopeAngle <= maxClimbAngle)
-                            {
-                                //print("Slope: " + slopeHit.transform.name + " - " + slopeAngle);
-                                ClimbSlope(ref velocity, slopeAngle);
-                            }
-                        }
-
-                        RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundCheckLayer);
-                        if (groundHit.collider != null)
-                        {
-                            if (groundHit.transform.gameObject.layer == 12)
-                            {
-                                AudioManager.PlaySound(AudioManager.Sound.PlayerWalkWood, transform.position);
-                            }
-                            else if (groundHit.transform.gameObject.layer == 13)
-                            {
-                                AudioManager.PlaySound(AudioManager.Sound.PlayerWalkGrass, transform.position);
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (!PlayerBase.isSwinging)
-            {
-                if (!PlayerBase.isGrounded) return;
-
-                if (PlayerBase.isJumping)
-                {
-                    rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
-                    AudioManager.PlaySound(AudioManager.Sound.PlayerJump, transform.position);
-                }
-            }
-            else
-            {
-                if (PlayerBase.isJumping)
-                {
+                    // Yank
                     if (PlayerBase.ropeHook != Vector2.zero)
                     {
-                        rigidBody.AddForce((new Vector3(PlayerBase.ropeHook.x, PlayerBase.ropeHook.y, 0) - transform.position) * (yankForce * 10));
+                        rigidBody.AddForce((PlayerBase.ropeHook - (Vector2)transform.position).normalized * (yankForce * 12f));
                         GetComponent<GrappleSystem>().ResetRope();
+                        PlayerBase.isJumping = false;
                     }
                 }
             }
