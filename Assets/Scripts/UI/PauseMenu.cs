@@ -52,6 +52,7 @@ namespace SoulHunter
             PauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             GameManager.gameIsPaused = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         /// <summary>
@@ -66,6 +67,8 @@ namespace SoulHunter
             GameManager.gameIsPaused = true;
 
             continueButton.Select();
+
+            Cursor.lockState = CursorLockMode.None;
         }
 
         /// <summary>

@@ -8,9 +8,13 @@ namespace SoulHunter
         [Header("Aim Variables")]
         public Vector2 aimDirection;
         public float aimAngle;
-        public float crosshairDistance = 1f;
+        public float crosshairDistance = 10f;
+
+        [Header("Mouse Settings")]
+        public float mouseSensitivity = 1f;
 
         Vector2 i_aimInput;
+        private Vector2 currentAimOffset;
 
         private void Update()
         {
@@ -31,11 +35,13 @@ namespace SoulHunter
         {
             if (GetComponent<PlayerInput>().currentControlScheme == "PC")
             {
-                var v3 = UnityEngine.Input.mousePosition;
-                v3.z = 10;
-                var worldMousePosition = Camera.main.ScreenToWorldPoint(v3);
-                var facingDirection = worldMousePosition - transform.position;
-                aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
+                Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+
+                currentAimOffset += mouseDelta * mouseSensitivity * Time.deltaTime;
+
+                currentAimOffset = Vector2.ClampMagnitude(currentAimOffset, 3f);
+
+                aimAngle = Mathf.Atan2(currentAimOffset.y, currentAimOffset.x);
             }
             else
             {

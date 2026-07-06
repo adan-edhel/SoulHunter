@@ -44,6 +44,15 @@ public class SceneController : MonoBehaviour // Mort
     {
         requestedIndex = index;
         loadingScreen.UpdateAnimatorValues(true, index);
+
+        if (index == 0)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     /// <summary>

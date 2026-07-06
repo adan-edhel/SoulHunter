@@ -61810,6 +61810,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 221232177}
     m_Modifications:
+    - target: {fileID: 2743484973140225848, guid: 4410aea4ec5808e408cebdaa570a6c9a,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853390986963134758, guid: 4410aea4ec5808e408cebdaa570a6c9a,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853390986964511130, guid: 4410aea4ec5808e408cebdaa570a6c9a,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853390986964538866, guid: 4410aea4ec5808e408cebdaa570a6c9a,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9173555784184982789, guid: 4410aea4ec5808e408cebdaa570a6c9a,
         type: 3}
       propertyPath: m_RootOrder
@@ -71169,11 +71189,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PortalRed
-      objectReference: {fileID: 0}
-    - target: {fileID: 9173555784184982791, guid: 4410aea4ec5808e408cebdaa570a6c9a,
-        type: 3}
-      propertyPath: isActivatable
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4410aea4ec5808e408cebdaa570a6c9a, type: 3}
